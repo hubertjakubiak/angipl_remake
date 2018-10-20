@@ -8,6 +8,8 @@
         Value
       %th
         Language
+      %th
+        Actions
   %tbody
     - @words.each do |word|
       %tr
@@ -17,3 +19,5 @@
           = word.value
         %td
           = word.language
+        %td
+          = link_to('Show', word_path(word), class: 'btn btn-primary')
