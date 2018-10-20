@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: angipl_2018_development
+  database: angipl_remake_development
 
 test:
   <<: *default
-  database: angipl_2018_test
+  database: angipl_remake_test
 
 production:
   <<: *default
-  database: angipl_2018_production
+  database: angipl_remake_production
   username:
   password:
