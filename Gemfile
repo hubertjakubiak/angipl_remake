@@ -29,7 +29,9 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
+  gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '4.0.0.rc1'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
