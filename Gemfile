@@ -30,6 +30,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '4.0.0.rc1'
