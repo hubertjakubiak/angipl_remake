@@ -1,0 +1,16 @@
+.container-fluid
+  .row
+    .col-md-12
+      %ul.nav
+        %li.nav-item
+          = link_to('Home', root_path, class: 'nav-link')
+        %li.nav-item
+          = link_to('Create new word', new_word_path, class: 'nav-link')
+        / %li.nav-item.dropdown.ml-md-auto
+        /   %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "http://example.com"} Dropdown link
+        /   .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "navbarDropdownMenuLink"}
+        /     %a.dropdown-item{:href => "#"} Action
+        /     %a.dropdown-item{:href => "#"} Another action
+        /     %a.dropdown-item{:href => "#"} Something else here
+        /     .dropdown-divider
+        /     %a.dropdown-item{:href => "#"} Separated link

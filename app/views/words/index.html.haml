@@ -1,12 +1,19 @@
 %h1 Words
-%p
-  We have 
-  = @words.count
-  words in database!
-%table
-  - @words.each do |word|
+%table.table
+  %thead
     %tr
-      %td= word.value
-      %td= word.language
-
-
+      %th
+        \#
+      %th
+        Value
+      %th
+        Language
+  %tbody
+    - @words.each do |word|
+      %tr
+        %td
+          = word.id
+        %td
+          = word.value
+        %td
+          = word.language
