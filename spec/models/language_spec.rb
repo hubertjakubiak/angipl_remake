@@ -5,6 +5,10 @@ RSpec.describe Language, type: :model do
     it { is_expected.to have_db_column(:name) }
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many(:words) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it do

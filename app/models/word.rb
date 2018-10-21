@@ -1,3 +1,4 @@
 class Word < ApplicationRecord
-  validates :content, presence: true
+  belongs_to :language
+  validates :content, :language, presence: true
 end

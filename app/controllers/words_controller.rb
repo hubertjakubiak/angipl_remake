@@ -23,6 +23,6 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.require(:word).permit(:content, :language)
+    params.require(:word).permit(:content, :language_id)
   end
 end
