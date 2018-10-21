@@ -18,6 +18,6 @@
         %td
           = word.content
         %td
-          = word.language
+          = word.language&.name
         %td
           = link_to('Show', word_path(word), class: 'btn btn-primary')
