@@ -44,7 +44,7 @@ RSpec.describe WordsController, type: :controller do
 
     context 'valid params' do
       let(:params) do
-        { word: { content: 'cat', language: 'english' } }
+        { word: { content: 'cat', language: 'English' } }
       end
 
       it 'creates new word' do
