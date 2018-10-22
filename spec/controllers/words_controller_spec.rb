@@ -107,7 +107,7 @@ RSpec.describe WordsController, type: :controller do
 
     context 'valid params' do
       let(:params) do
-        { id: word.id, word: { content: 'kot', language_id: language_2.id} }
+        { id: word.id, word: { content: 'kot', language_id: language_2.id } }
       end
 
       it 'updates word' do
@@ -128,6 +128,22 @@ RSpec.describe WordsController, type: :controller do
 
       it 'does not update word' do
         expect { subject }.not_to change { word.reload.content }
+      end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    subject { delete :destroy, params: params }
+
+    let!(:word) { create(:word) }
+
+    context 'valid params' do
+      let(:params) do
+        { id: word.id }
+      end
+
+      it 'deletes word' do
+        expect { subject }.to change(Word, :count).from(1).to(0)
       end
     end
   end
