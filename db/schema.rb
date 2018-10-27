@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_072631) do
+ActiveRecord::Schema.define(version: 2018_10_27_091523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,11 @@ ActiveRecord::Schema.define(version: 2018_10_27_072631) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "language_id"
+    t.bigint "user_id"
     t.index ["language_id"], name: "index_words_on_language_id"
+    t.index ["user_id"], name: "index_words_on_user_id"
   end
 
   add_foreign_key "words", "languages"
+  add_foreign_key "words", "users"
 end
