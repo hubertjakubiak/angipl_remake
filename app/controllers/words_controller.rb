@@ -7,11 +7,12 @@ class WordsController < ApplicationController
   end
 
   def new
-    @word = Word.new
+    @word = current_user.words.new
   end
 
   def create
     @word = Word.new(word_params)
+    @word.user = current_user
     if @word.save
       redirect_to(words_path)
     else
