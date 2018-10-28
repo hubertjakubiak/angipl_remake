@@ -21,6 +21,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
 end
@@ -36,7 +37,6 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'rails-controller-testing' # If you are using Rails 5.x
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '4.0.0.rc1'
