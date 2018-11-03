@@ -27,3 +27,4 @@
           = link_to('Show', word_path(word), class: 'btn btn-primary')
           = link_to('Edit', edit_word_path(word), class: 'btn btn-primary')
           = link_to('Delete', word_path(word), class: 'btn btn-primary', method: :delete)
+= paginate @words, theme: 'twitter-bootstrap-4'
