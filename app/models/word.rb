@@ -8,8 +8,16 @@ class Word < ApplicationRecord
   has_many :inverse_translations, through: :inverse_translations_association, source: :word
 
   validates :content, :language, presence: true
+  validate :translations_cannot_be_in_the_same_language_as_word
 
   accepts_nested_attributes_for :translations
 
   paginates_per 10
+
+  private
+
+  def translations_cannot_be_in_the_same_language_as_word
+    return if translations.none? { |translation| translation.language == language }
+    errors.add(:language, 'must be different than language of translations.')
+  end
 end
