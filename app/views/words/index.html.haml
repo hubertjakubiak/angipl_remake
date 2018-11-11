@@ -11,6 +11,8 @@
       %th
         User
       %th
+        Translations Count
+      %th
         Actions
   %tbody
     - @words.each do |word|
@@ -23,6 +25,8 @@
           = word.language&.name
         %td
           = word.user&.email
+        %td
+          = word.translations.size
         %td
           = link_to('Show', word_path(word), class: 'btn btn-primary')
           = link_to('Edit', edit_word_path(word), class: 'btn btn-primary')
