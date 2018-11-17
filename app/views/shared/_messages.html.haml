@@ -1,6 +1,4 @@
-- flash.each do |key, value|
-  %div{:class => "alert alert-#{key}"}
-    %a.close{"data-dismiss" => "alert", :href => "#"} ×
-    %ul
-      %li
-        = value
+.container-fluid
+  .row
+    .col-md-12.mt-3
+      = flash_messages

@@ -1,11 +1,13 @@
-= simple_nested_form_for @word do |f|
-  = f.input :content
-  = f.association :language
-  %h3 Translations
-  = f.fields_for :translations do |t|
-    = t.input :content
-    = t.association :language
-    %p= t.link_to_remove('Remove this translation', class: 'btn btn-danger')
-  %p= f.link_to_add('Add a new translation', :translations, class: 'btn btn-primary')
+.row
+  .col-md-6
+    = simple_nested_form_for @word do |f|
+      = f.input :content
+      = f.association :language
+      %h3 Translations
+      = f.fields_for :translations do |t|
+        = t.input :content
+        = t.association :language
+        %p= t.link_to_remove('Remove this translation', class: 'btn btn-danger')
+      %p= f.link_to_add('Add a new translation', :translations, class: 'btn btn-primary')
 
-  = f.button :submit, class: 'btn btn-primary'
+      = f.button :submit, class: 'btn btn-primary'
