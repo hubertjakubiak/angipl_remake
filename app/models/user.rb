@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :words
+  has_many :games
 
   def secret_email
     email.gsub(/.{0,4}@/, '####@')
