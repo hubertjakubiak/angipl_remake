@@ -8,6 +8,8 @@
             - if user_signed_in?
               %li.nav-item
                 = link_to('New word', new_word_path, class: 'nav-link')
+              %li.nav-item
+                = link_to('Start game', games_path, method: :post, class: 'nav-link')
             - if user_signed_in?
               %li.nav-item
                 = link_to('Edit registration', edit_user_registration_path, class: 'nav-link')
