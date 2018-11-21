@@ -10,3 +10,10 @@
 
 %p
   = @word.content
+
+= simple_form_for :answer, url: answers_path, method: :post do |f|
+  = f.input :content, as: :string
+  = f.input :word_id, as: :hidden, input_html: { value: @word.id }
+  = f.input :game_id, as: :hidden, input_html: { value: @game.id }
+  = f.submit 'Check answer'
+
