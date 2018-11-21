@@ -11,6 +11,11 @@ module Words
       good_answer?
     end
 
+    def message
+      return I18n.t('check_answer.good_answer') if good_answer?
+      I18n.t('check_answer.bad_answer')
+    end
+
     private
 
     attr_reader :word, :game, :answer
