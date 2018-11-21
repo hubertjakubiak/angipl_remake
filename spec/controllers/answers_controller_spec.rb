@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe AnswersController, type: :controller do
   describe 'POST create' do
-    subject { post :create, params: params }
+    subject { post :create, xhr: true, params: params }
 
     context 'when user is signed in' do
       let(:user) { create(:user) }
@@ -19,7 +19,7 @@ RSpec.describe AnswersController, type: :controller do
 
         it do
           subject
-          expect(response).to have_http_status(302)
+          expect(response).to have_http_status(200)
         end
 
         it 'calls service to check answer' do

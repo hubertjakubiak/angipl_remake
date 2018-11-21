@@ -4,8 +4,10 @@ class AnswersController < ApplicationController
   def create
     authorize(game, :access?)
     checker = Words::CheckAnswer.new(word, game, answer)
-    checker.call
-    redirect_back(fallback_location: root_path, notice: checker.message)
+    @checker = checker.call
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
