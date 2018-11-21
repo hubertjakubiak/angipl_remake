@@ -1,19 +1,21 @@
-%h1 
-  Game
-  \##{@game.id}
-%p
-  Good Answers:
-  = @game.good_answers_count
-%p
-  Bad Answers:
-  = @game.bad_answers_count
-
-%p
-  = @word.content
-
-= simple_form_for :answer, url: answers_path, method: :post do |f|
-  = f.input :content, as: :string
-  = f.input :word_id, as: :hidden, input_html: { value: @word.id }
-  = f.input :game_id, as: :hidden, input_html: { value: @game.id }
-  = f.submit 'Check answer'
+.container
+  .jumbotron.text-center
+    %h1.display-4= @word.content
+    .row
+      .col-md-4.offset-md-4
+        = simple_form_for :answer, url: answers_path, method: :post do |f|
+          = f.input :content, as: :string, label: false, input_html: { autocomplete: 'off', autofocus: true }
+          = f.input :word_id, as: :hidden, input_html: { value: @word.id }
+          = f.input :game_id, as: :hidden, input_html: { value: @game.id }
+          = f.submit 'Check answer', class: 'btn btn-primary btn-lg'
+    %p
+      %table.table
+        %thead
+          %tr
+            %th.table-success Good Answers
+            %th.table-danger Bad Answers
+        %tbody
+          %tr
+            %td.table-success= @game.good_answers_count
+            %td.table-danger= @game.bad_answers_count
 
