@@ -13,8 +13,10 @@
         %tr
           %th.table-success Good Answers
           %th.table-danger Bad Answers
+          %th Correctness
       %tbody
         %tr
           %td.table-success= @game.good_answers_count
           %td.table-danger= @game.bad_answers_count
+          %td= @game.correctness
 
