@@ -10,6 +10,7 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'bootstrap4-kaminari-views'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'faker'
 gem 'haml-rails', '~> 1.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -25,7 +26,6 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
 end
