@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   before_action :set_word, only: %i[show edit update destroy]
 
   def index
-    @words = Word.page(params[:page])
+    @words = Word.includes(:user, :language, :translations).page(params[:page])
   end
 
   def new
